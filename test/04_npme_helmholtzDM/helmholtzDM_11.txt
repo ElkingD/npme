@@ -1,0 +1,13 @@
+@Keyword
+  FFTmemGB      5.0         (maximum FFT memory in GB)
+  vecOption     avx         (none, avx, or avx-512)         (default = avx)
+  BnOrder       8           (B-spline order = even integer) (default = 8)
+  calcType      pme         ('pme', 'exact', or 'pme_exact', required)
+  funcType      Helmholtz   ('Laplace', 'Helmholtz', or 'Ralpha', required)
+  EwaldSplit    DerivMatch  ('DerivMatch' or 'LaplaceOrig', req)
+  k0_r          1.1         (required for funcType = Helmholtz)
+  k0_i          0.0         (required for funcType = Helmholtz)
+  Rdir          11.0        (direct space cutoff, required)
+  tol           1.0E-6      (direct space tolerance) (default = 1.0E-6)
+  printV        1           (print output potential) (default = 1)
+

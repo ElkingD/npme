@@ -1,0 +1,14 @@
+@Keyword
+  nCharge       100000                (number of charges/coord, required)
+  crdFile       crdChg.txt            (output filename)
+  lx            50.0                  (x dimension length,    default = 10)
+  ly            75.0                  (y dimension length,    default = 10)
+  lz            100.0                 (z dimension length,    default = 10)
+  chargeType    real                  (real or complex,       default = real)
+  chargeScale   2.0                   (max size of charges,   default = 1.0)
+  printLog      0                     (0 or 1 for logFile     default = 1)
+  seed          3                     (random number seed)
+
+
+
+
