@@ -175,7 +175,7 @@ int main (int argc, char *argv[])
 
     //6) select kernel pointers
     if (!NPME_Interface_SelectKernelPtr (func, func_LR, func_SR,
-      kernelList, keyword, 0, ofs_log))
+      kernelList, keyword, printLev2, ofs_log))
     //a) using 'keyword', selects correct kernels from 'kernelList'
     //b) set correct kernels with appropriate parameters from 'keyword'
     //c) set kernel function pointers ('func', 'func_LR', 'func_SR')

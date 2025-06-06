@@ -368,13 +368,13 @@ bool NPME_Kfunc_Laplace_LR_DM::SetParm (const int Nder,
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      a[%4d] = %15.6le\n", i, _a[i]);
+      sprintf(str, "      a[%4d] = %25.15le\n", i, _a[i]);
       os << str;
     }
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      b[%4d] = %15.6le\n", i, _b[i]);
+      sprintf(str, "      b[%4d] = %25.15le\n", i, _b[i]);
       os << str;
     }
   }
@@ -729,13 +729,13 @@ bool NPME_Kfunc_Laplace_SR_DM::SetParm (const int Nder,
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      a[%4d] = %15.6le\n", i, _a[i]);
+      sprintf(str, "      a[%4d] = %25.15le\n", i, _a[i]);
       os << str;
     }
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      b[%4d] = %15.6le\n", i, _b[i]);
+      sprintf(str, "      b[%4d] = %25.15le\n", i, _b[i]);
       os << str;
     }
   }

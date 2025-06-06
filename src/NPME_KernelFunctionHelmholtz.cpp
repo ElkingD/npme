@@ -477,14 +477,14 @@ bool NPME_Kfunc_Helmholtz_LR_DM::SetParm (const _Complex double k0,
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      a[%4d] = %15.6le + %15.6lei\n", 
+      sprintf(str, "      a[%4d] = %25.15le + %25.15lei\n", 
         i, creal(_a[i]), cimag(_a[i]));
       os << str;
     }
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      b[%4d] = %15.6le + %15.6lei\n", 
+      sprintf(str, "      b[%4d] = %25.15le + %25.15lei\n", 
         i, creal(_b[i]), cimag(_b[i]));
       os << str;
     }
@@ -931,14 +931,14 @@ bool NPME_Kfunc_Helmholtz_SR_DM::SetParm (const _Complex double k0,
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      a[%4d] = %15.6le + %15.6lei\n", 
+      sprintf(str, "      a[%4d] = %25.15le + %25.15lei\n", 
         i, creal(_a[i]), cimag(_a[i]));
       os << str;
     }
     os << "\n";
     for (int i = 0; i <= _Nder; i++)
     {
-      sprintf(str, "      b[%4d] = %15.6le + %15.6lei\n", 
+      sprintf(str, "      b[%4d] = %25.15le + %25.15lei\n", 
         i, creal(_b[i]), cimag(_b[i]));
       os << str;
     }
