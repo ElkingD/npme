@@ -1,5 +1,5 @@
 The npme code requires the Intel C++ compiler and associated Math Kernel Library (MKL). 
-As of version 1.1, npme has been updated to support the new free Intel oneAPI compiler suite.
+As of npme v1.2, npme has been updated to support the new free Intel oneAPI compiler suite.
 
 To install the latest Intel compiler:
   https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html
@@ -15,7 +15,7 @@ example input files and testing scripts. For example:
   > cd ./test/01_npme_laplaceDM
   > ./run.sh
 
-### Compatibility Notes:
+#Compatibility Notes:
 
 - Version 1.1 and later are compatible with the **Intel oneAPI compiler**.
 - Earlier releases, including:
