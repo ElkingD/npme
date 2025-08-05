@@ -1,45 +1,57 @@
-# Compiler and flags
-CPP = icpc
-CFLAGS = -Ofast -fopenmp -march=native -ffast-math -funroll-all-loops -Werror-all -mkl
+.SECONDARY:
+
+# Compiler and base flags
+CPP = icpx
+BASEFLAGS = -ffast-math -qopenmp -funroll-loops -qmkl -Wno-nan-infinity-disabled -MMD -MP
+CFLAGS = -O3 -march=native $(BASEFLAGS)
 
 # Directories
-TOP_DIR := $(CURDIR)
-SRC_DIR := $(TOP_DIR)/src
-APP_DIR := $(TOP_DIR)/app
-OBJ_DIR := $(TOP_DIR)/obj
-EXE_DIR := $(TOP_DIR)/exe
+SRC_DIR = src
+APP_DIR = app
+OBJ_DIR = obj
+EXE_DIR = exe
 
-# Ensure obj and exe directories exist
+# Ensure output directories exist
 $(shell mkdir -p $(OBJ_DIR) $(EXE_DIR))
 
-# Include directories
-INCLUDES := -I$(SRC_DIR)
+# App executables (adjust as needed)
+APPS = npme makeRandomBox laplaceDM RalphaDM helmholtzDM userDefineFunc compareV
 
-# Library source and object files
-LIB_SRC := $(wildcard $(SRC_DIR)/NPME_*.cpp)
-LIB_OBJ := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(LIB_SRC))
+# Object files
+APP_OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(APPS)))
+LIB_SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+LIB_OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(LIB_SRCS))
 
-# Application source/object/executables
-APP_SRC := $(wildcard $(APP_DIR)/*.cpp)
-APP_OBJ := $(patsubst $(APP_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(APP_SRC))
-APP_NAMES := npme makeRandomBox laplaceDM RalphaDM helmholtzDM userDefineFunc compareV
-APP_EXE := $(patsubst %,$(EXE_DIR)/%,$(APP_NAMES))
+# Default target
+all: $(addprefix $(EXE_DIR)/, $(APPS))
 
-# Build all
-all: $(APP_EXE)
+# AVX2 build target
+avx2: CFLAGS := -O3 -march=native -mavx2 $(BASEFLAGS)
+avx2: clean all
 
-# Linking rules for each app
-$(EXE_DIR)/%: $(OBJ_DIR)/%.o $(LIB_OBJ)
+# AVX-512 build target
+avx512: CFLAGS := -O3 -xCORE-AVX512 $(BASEFLAGS)
+avx512: clean all
+
+# Build each executable by linking app object with library objects
+$(EXE_DIR)/%: $(OBJ_DIR)/%.o $(LIB_OBJS)
 	$(CPP) $(CFLAGS) -o $@ $^ -lm
 
-# Compile rules
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CPP) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
+# Compile application source files
 $(OBJ_DIR)/%.o: $(APP_DIR)/%.cpp
-	$(CPP) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CPP) $(CFLAGS) -I$(SRC_DIR) -c $< -o $@
 
-# Cleanup
+# Compile library source files, with a special case for PotentialLaplace.cpp using -O1
+obj/PotentialLaplace.o: src/PotentialLaplace.cpp
+	$(CPP) -O1 $(filter-out -O3,$(CFLAGS)) -I$(SRC_DIR) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CPP) $(CFLAGS) -I$(SRC_DIR) -c $< -o $@
+
+# Clean target
 clean:
-	rm -f $(OBJ_DIR)/*.o $(EXE_DIR)/*
+	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/*.d $(EXE_DIR)/*
+
+# Automatically include dependencies
+-include $(OBJ_DIR)/*.d
 

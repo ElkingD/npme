@@ -26,15 +26,15 @@
 
 
 
-#include "NPME_Constant.h"
-#include "NPME_ReadPrint.h"
-#include "NPME_KernelFunction.h"
-#include "NPME_KernelFunctionLaplace.h"
-#include "NPME_KernelFunctionRalpha.h" 
-#include "NPME_KernelFunctionHelmholtz.h"
-#include "NPME_Interface.h"
+#include "Constant.h"
+#include "ReadPrint.h"
+#include "KernelFunction.h"
+#include "KernelFunctionLaplace.h"
+#include "KernelFunctionRalpha.h" 
+#include "KernelFunctionHelmholtz.h"
+#include "Interface.h"
 
-#include "NPME_SupportFunctions.h"
+#include "SupportFunctions.h"
 using namespace NPME_Library;
 
 
@@ -175,7 +175,7 @@ int main (int argc, char *argv[])
 
     //6) select kernel pointers
     if (!NPME_Interface_SelectKernelPtr (func, func_LR, func_SR,
-      kernelList, keyword, printLev2, ofs_log))
+      kernelList, keyword, 0, ofs_log))
     //a) using 'keyword', selects correct kernels from 'kernelList'
     //b) set correct kernels with appropriate parameters from 'keyword'
     //c) set kernel function pointers ('func', 'func_LR', 'func_SR')

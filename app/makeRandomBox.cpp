@@ -24,10 +24,10 @@
 #include <string>
 
 
-#include "NPME_Constant.h"
-#include "NPME_ReadPrint.h"
-#include "NPME_SupportFunctions.h"
-#include "NPME_ExtLibrary.h"
+#include "Constant.h"
+#include "ReadPrint.h"
+#include "SupportFunctions.h"
+#include "ExtLibrary.h"
 using namespace NPME_Library;
 
 

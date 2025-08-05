@@ -24,9 +24,9 @@
 
 
 
-#include "NPME_Constant.h"
-#include "NPME_ReadPrint.h"
-#include "NPME_SupportFunctions.h"
+#include "Constant.h"
+#include "ReadPrint.h"
+#include "SupportFunctions.h"
 using namespace NPME_Library;
 
 
