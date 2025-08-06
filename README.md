@@ -1,9 +1,8 @@
-# NPME: Non-Periodic Particle Mesh Ewald
-C++ implementation of the Non-Periodic Particle Mesh Ewald (NPME) method for radially symmetric kernels.  
+# NPME: Non-Periodic Particle Mesh Ewald    
 ---
 
 # Description
-The non-periodic particle mesh Ewald (NPME) method is a fast method for calculating pair-wise potentials for a set charges interacting via radially symmetric kernel $f(r)$ in free space.  NPME extends the smooth Particle Mesh Ewald (PME) algorithm to non-periodic charge systems with arbitrary radially symmetric kernels by first splitting the kernel $f(r)$ into short-range $f_{s}(r)$ and smooth long-range $f_{l}(r)$ components.  $f_{l}(r)$ is represented numerically as a Fourier extension calculated with discrete Fourier interpolation.  This numerical representation for $f_{l}(r)$ leads to flexibility in the kernel, kernel splitting, and application to anisotropic rectangular volumes.  In particular, the derivative match (DM) splitting is applicable to arbitrary radially symmetric kernels and has additional performance capabilities.  npme is an open source implementation of the NPME method.  The current npme version supports predefined kernels $1/r, r^{\alpha}, \exp(ik_{0}r)/r$ and also user-defined kernels via C++ classes.
+npme is a C++ implementation of the non-Periodic particle mesh Ewald (NPME) method, which is a fast method for calculating pair-wise potentials for a set charges interacting via radially symmetric kernel $f(r)$ in free space.  NPME extends the smooth Particle Mesh Ewald (PME) algorithm to non-periodic charge systems with arbitrary radially symmetric kernels by first splitting the kernel $f(r)$ into short-range $f_{s}(r)$ and smooth long-range $f_{l}(r)$ components.  $f_{l}(r)$ is represented numerically as a Fourier extension calculated with discrete Fourier interpolation.  This numerical representation for $f_{l}(r)$ leads to flexibility in the kernel, kernel splitting, and application to anisotropic rectangular volumes.  In particular, the derivative match (DM) splitting is applicable to arbitrary radially symmetric kernels and has additional performance capabilities.  npme is an open source implementation of the NPME method.  The current npme version supports predefined kernels: $1/r$, $r^{\alpha}$, $\exp(ik_{0}r)/r$ and also user-defined kernels via C++ classes.
 
 ---
 
