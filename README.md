@@ -31,7 +31,7 @@ To compile using 4 threads:
 /src    - NPME core library source code  
 /app    - Command-line applications  
 /test   - Test cases and example input scripts  
-/doc    - User manual and CPC preprint PDF  
+/doc    - User manual and CPC preprint PDF
 
 ---
 
@@ -43,22 +43,20 @@ cd ./test/01_npme_laplaceDM
 
 ## Compatibility Notes
 v1.2 and later: Compatible with Intel oneAPI compiler  
-v1.0, v1.1: Require Intel Classic C++ Compiler (not supported in v1.2)  
+v1.0, v1.1: Require Intel Classic C++ Compiler (not supported in v1.2)
 
 ---
 
 ## Example Test Run
 cd ./test/01_npme_laplaceDM  
-./run.sh  
+./run.sh
 
 ---
 
 ## Citation
 When using npme, please cite the following references:  
-[1] D. M. Elking, “A non-periodic particle mesh Ewald method for radially symmetric kernels in free space”, Comput. Phys. Comm. 315, 109739 (2025).  
-https://doi.org/10.1016/j.cpc.2025.109739  
-[2] U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee, and L. G. Pedersen, “A smooth particle mesh Ewald method”, J. Chem. Phys. 103, 8577 (1995).  
-https://doi.org/10.1063/1.470117  
+[1] D. M. Elking, “A non-periodic particle mesh Ewald method for radially symmetric kernels in free space”, Comput. Phys. Comm. 315, 109739 (2025). https://doi.org/10.1016/j.cpc.2025.109739  
+[2] U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee, and L. G. Pedersen, “A smooth particle mesh Ewald method”, J. Chem. Phys. 103, 8577 (1995). https://doi.org/10.1063/1.470117  
 
 ---
 
