@@ -1,12 +1,11 @@
 # NPME: Non-Periodic Particle Mesh Ewald    
----
 
-# Description
+## Description
 npme is a C++ implementation of the non-Periodic particle mesh Ewald (NPME) method, which is a fast method for calculating pair-wise potentials for a set charges interacting via radially symmetric kernel $f(r)$ in free space.  NPME extends the smooth Particle Mesh Ewald (PME) algorithm to non-periodic charge systems with arbitrary radially symmetric kernels by first splitting the kernel $f(r)$ into short-range $f_{s}(r)$ and smooth long-range $f_{l}(r)$ components.  $f_{l}(r)$ is represented numerically as a Fourier extension calculated with discrete Fourier interpolation.  This numerical representation for $f_{l}(r)$ leads to flexibility in the kernel, kernel splitting, and application to anisotropic rectangular volumes.  In particular, the derivative match (DM) splitting is applicable to arbitrary radially symmetric kernels and has additional performance capabilities.  npme is an open source implementation of the NPME method.  The current npme version supports predefined kernels: $1/r$, $r^{\alpha}$, $\exp(ik_{0}r)/r$ and also user-defined kernels via C++ classes.
 
 ---
 
-# References and Resources
+## References and Resources
 - Accepted manuscript (CPC preprint PDF): [📄 Download](docs/npme_preprint.pdf) 
 - Published in Computer Physics Communications: [DOI: 10.1016/j.cpc.2025.109739](https://doi.org/10.1016/j.cpc.2025.109739) 
 - Cassyni Seminar Talk: [Watch here](https://cassyni.com/events/3gMtbmEfjR8JvWTEEEbkay) 
@@ -14,7 +13,7 @@ npme is a C++ implementation of the non-Periodic particle mesh Ewald (NPME) meth
 
 ---
 
-# Installation
+## Installation
 The NPME code requires the Intel C++ compiler and associated Math Kernel Library (MKL). 
 As of npme v1.2, the code has been updated to support the free Intel oneAPI compiler suite.
 
