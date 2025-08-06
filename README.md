@@ -1,8 +1,5 @@
 # NPME: Non-Periodic Particle Mesh Ewald
-
-https://doi.org/10.1016/j.cpc.2025.109739
-C++ implementation of the Non-Periodic Particle Mesh Ewald (NPME) method for radially symmetric kernels.
-
+C++ implementation of the Non-Periodic Particle Mesh Ewald (NPME) method for radially symmetric kernels.  
 ---
 
 # Description
@@ -61,8 +58,8 @@ When using npme, please cite the following references:
 ---
 
 ## Contact
-Dennis M. Elking
-FieldDyne LLC
+Dennis M. Elking  
+FieldDyne L.L.C.  
 delking@fielddyne.com
 
 ---
