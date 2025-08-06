@@ -1,7 +1,7 @@
 # NPME: Non-Periodic Particle Mesh Ewald    
 
 ## Description
-is a C++ implementation of the non-Periodic Particle Mesh Ewald (NPME) method - a fast algorithm for calculating pairwise potentials for a set of charges interacting via a radially symmetric kernel $f(r)$ in free space.
+npme is a C++ implementation of the non-Periodic Particle Mesh Ewald (NPME) method - a fast algorithm for calculating pairwise potentials for a set of charges interacting via a radially symmetric kernel $f(r)$ in free space.
 
 NPME extends the smooth Particle Mesh Ewald (PME) algorithm to non-periodic charge systems with arbitrary radially symmetric kernels by splitting the kernel $f(r)$ into:
 - Short-range component $f_{s}(r)$
@@ -32,8 +32,9 @@ The NPME code requires the Intel C++ compiler and associated Math Kernel Library
 As of npme v1.2, the code has been updated to support the free Intel oneAPI compiler suite.
 
 To compile using 4 threads:  
->make -j4
-
+```
+make -j4
+```
 ---
 
 ## Directory Structure
@@ -45,20 +46,15 @@ To compile using 4 threads:
 ---
 
 ## Example Test Run
-cd ./test/01_npme_laplaceDM  
+```
+cd ./test/01_npme_laplaceDM
 ./run.sh
-
+```
 ---
 
 ## Compatibility Notes
 v1.2 and later: Compatible with Intel oneAPI compiler  
 v1.0, v1.1: Require Intel Classic C++ Compiler (not supported in v1.2)
-
----
-
-## Example Test Run
-cd ./test/01_npme_laplaceDM  
-./run.sh
 
 ---
 
