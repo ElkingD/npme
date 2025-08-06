@@ -67,7 +67,7 @@ When using npme, please cite the following references:
 
 ## Contact
 Dennis M. Elking  
-FieldDyne L.L.C.  
+FieldDyne, L.L.C.  
 delking@fielddyne.com
 
 ---
