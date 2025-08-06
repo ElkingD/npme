@@ -1,12 +1,26 @@
 # NPME: Non-Periodic Particle Mesh Ewald    
 
 ## Description
-npme is a C++ implementation of the non-Periodic particle mesh Ewald (NPME) method, which is a fast method for calculating pair-wise potentials for a set charges interacting via radially symmetric kernel $f(r)$ in free space.  NPME extends the smooth Particle Mesh Ewald (PME) algorithm to non-periodic charge systems with arbitrary radially symmetric kernels by first splitting the kernel $f(r)$ into short-range $f_{s}(r)$ and smooth long-range $f_{l}(r)$ components.  $f_{l}(r)$ is represented numerically as a Fourier extension calculated with discrete Fourier interpolation.  This numerical representation for $f_{l}(r)$ leads to flexibility in the kernel, kernel splitting, and application to anisotropic rectangular volumes.  In particular, the derivative match (DM) splitting is applicable to arbitrary radially symmetric kernels and has additional performance capabilities.  npme is an open source implementation of the NPME method.  The current npme version supports predefined kernels: $1/r$, $r^{\alpha}$, $\exp(ik_{0}r)/r$ and also user-defined kernels via C++ classes.
+is a C++ implementation of the non-Periodic Particle Mesh Ewald (NPME) method - a fast algorithm for calculating pairwise potentials for a set of charges interacting via a radially symmetric kernel $f(r)$ in free space.
 
+NPME extends the smooth Particle Mesh Ewald (PME) algorithm to non-periodic charge systems with arbitrary radially symmetric kernels by splitting the kernel $f(r)$ into:
+- Short-range component $f_{s}(r)$
+- Smooth long-range component $f_{l}(r)$
+
+The smooth long-range component $f_{l}(r)$ is represented numerically as a Fourier extension, computed via discrete Fourier interpolation. This numerical representation provides flexibility in:
+- Kernel choice
+- Kernel splitting strategy
+- Application to anisotropic rectangular volumes
+
+The derivative match (DM) splitting is applicable to arbitrary radially symmetric kernels and offers additional performance improvements.
+
+npme is open source and currently supports:
+- Predefined kernels: $1/r$, $r^{\alpha}$, $\exp(ik_{0}r)/r$
+- User-defined kernels via C++ classes
 ---
 
 ## References and Resources
-- Accepted manuscript (CPC preprint PDF): [📄 Download](docs/npme_preprint.pdf) 
+- Accepted manuscript (CPC preprint PDF): [Download](docs/npme_preprint.pdf) 
 - Published in Computer Physics Communications: [DOI: 10.1016/j.cpc.2025.109739](https://doi.org/10.1016/j.cpc.2025.109739) 
 - Cassyni Seminar Talk: [Watch here](https://cassyni.com/events/3gMtbmEfjR8JvWTEEEbkay) 
 - Intel oneAPI Compiler: [Download here](https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html)
